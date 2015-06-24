@@ -1,5 +1,7 @@
+#!/usr/bin/env python
+
 from datetime import datetime, timedelta
-from colorama import Fore, Style
+from colorama import Fore, Style, init
 
 try:
   from data import schedules
@@ -39,6 +41,7 @@ today = datetime.now().strftime('%Y%m%d')
 schedule = schedules.get(today)
 
 if schedule:
+  init()
   rows = [('isha','Isya'),('maghrib','Maghrib'),('ashr','Ashar'),('dzuhr','Dzuhur'),('fajr','Subuh')]
   nexts = {}
 
